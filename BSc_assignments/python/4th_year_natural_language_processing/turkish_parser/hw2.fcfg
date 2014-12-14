@@ -1,0 +1,118 @@
+#! /usr/bin/python
+# -*- coding: utf-8 -*
+
+% start S
+# ######################
+# Grammar Productions
+# ######################
+
+# #########################
+# S expansion productions
+
+S -> Subj[NUM=?n] Obj[NUM=?n] VOB[NUM=?n]
+S -> Subj[NUM=?n] Tum[NUM=?n] VDT[NUM=?n]
+S -> Obj[NUM=?n] Subj[NUM=?n] VOB[NUM=?n]
+S -> Tum[NUM=?n] Subj[NUM=?n] VDT[NUM=?n]
+S -> Subj[NUM=?n] VOB[NUM=?n]
+S -> Subj[NUM=?n] VDT[NUM=?n]
+S -> Obj[NUM=?n] VOB[NUM=?n]
+S -> Tum[NUM=?n] VDT[NUM=?n]
+S -> Subj[NUM=?n] VN[NUM=?n]
+S -> VOB[NUM=?n]
+S -> VDT[NUM=?n]
+S -> VN[NUM=?n]
+
+# #########################
+# Subj expansion products
+# AP -> adjective phrase
+
+Subj[NUM=?n] -> N[NUM=?n]
+Subj[NUM=?n] -> Det[NUM=?n] N[NUM=?n]
+Subj[NUM=?n] -> Det[NUM=?n] Adj[NUM=?n] N[NUM=?n]
+Subj[NUM=?n] -> AP[NUM=?n] Det[NUM=?n] N[NUM=?n]
+Subj[NUM=?n] -> AP[NUM=?n] N[NUM=?n]
+Subj[NUM=?n] -> NomRel[NUM=?n] N[NUM=?n]
+Subj[NUM=?n] -> NomRel[NUM=?n] Det[NUM=?n] N[NUM=?n]
+
+# #########################
+# Obj expansion products
+# NOB -> belirtme halli isim
+
+Obj[NUM=?n] -> NOB[NUM=?n]
+Obj[NUM=?n] -> Det[NUM=?n] NOB[NUM=?n]
+Obj[NUM=?n] -> Det[NUM=?n] Adj[NUM=?n] NOB[NUM=?n]
+Obj[NUM=?n] -> AP[NUM=?n] Det[NUM=?n] NOB[NUM=?n]
+Obj[NUM=?n] -> AP[NUM=?n] NOB[NUM=?n]
+Obj[NUM=?n] -> NomRel[NUM=?n] NOB[NUM=?n]
+Obj[NUM=?n] -> NomRel[NUM=?n] Det[NUM=?n] NOB[NUM=?n]
+
+# #########################
+# Tum expansion productions
+# NDT -> yonelme ekli isim
+
+Tum[NUM=?n] -> NDT[NUM=?n]
+Tum[NUM=?n] -> Det[NUM=?n] NDT[NUM=?n]
+Tum[NUM=?n] -> Det[NUM=?n] Adj[NUM=?n] NDT[NUM=?n]
+Tum[NUM=?n] -> AP[NUM=?n] Det[NUM=?n] NDT[NUM=?n]
+Tum[NUM=?n] -> AP[NUM=?n] NDT[NUM=?n]
+Tum[NUM=?n] -> NomRel[NUM=?n] Det[NUM=?n] NDT[NUM=?n]
+
+# #########################
+# AP expansion productions
+# VerbRelDT -> VerbRel for yonelme eki
+# VerbRelNIN -> VerbRel for tamlama eki
+# VerbRelOB -> VerbRel for belirtme eki
+# NNIN -> Tamlama ekli isim
+
+AP[NUM=?n] -> Adj[NUM=?n]
+AP[NUM=?n] -> NDT[NUM=?n] VerbRelDT[NUM=?n]
+AP[NUM=?n] -> NNIN[NUM=?n] VerbRelNIN[NUM=?n]
+AP[NUM=?n] -> NOB[NUM=?n] VerbRelOB[NUM=?n]
+AP[NUM=?n] -> NomRel[NUM=?n] NDT[NUM=?n] VerbRelDT[NUM=?n]
+AP[NUM=?n] -> NomRel[NUM=?n] NNIN[NUM=?n] VerbRelNIN[NUM=?n]
+AP[NUM=?n] -> NomRel[NUM=?n] NOB[NUM=?n] VerbRelOB[NUM=?n]
+AP[NUM=?n] -> VerbRelX[NUM=?n]
+
+# #########################
+# Lexicon Analysis
+# Verb Analysis
+VOB[NUM=1] -> 'kırarım' | 'vururum' | 'parçalamışım' | 'gönderdim' | 'salladım'
+VOB[NUM=2] -> 'kırarsın' | 'vurursun' | 'parçalamışsın' | 'gönderdin' | 'salladın'
+VOB[NUM=3] -> 'kırar' | 'vurur' | 'parçalamış' | 'gönderdi' | 'salladı'
+VOB[NUM=4] -> 'kırarız' | 'vururuz' | 'parçalamışız' | 'gönderdik' | 'salladık'
+VOB[NUM=5] -> 'kırarsınız' | 'vurursunuz' | 'parçalamışsınız' | 'gönderdiniz' | 'salladınız'
+VOB[NUM=6] -> 'kırarlar' | 'vururlar' | 'parçalamışlar' | 'gönderdiler' | 'salladılar'
+VDT[NUM=1] -> 'vururum' | 'kalacağım' | 'gönderdim' |'salladım' | 'giderim'
+VDT[NUM=2] -> 'vurursun' | 'kalacaksın' | 'gönderdin' |'salladın' | 'gidersin'
+VDT[NUM=3] -> 'vurur' | 'kalacak' | 'gönderdi' |'salladı' | 'gider'
+VDT[NUM=4] -> 'vururuz' | 'kalacağız' | 'gönderdik' |'salladık' | 'gideriz'
+VDT[NUM=5] -> 'vurursunuz' | 'kalacaksınız' | 'gönderdiniz' |'salladınız' | 'gidersiniz'
+VDT[NUM=6] -> 'vururlar' | 'kalacaklar' | 'gönderdiler' |'salladılar' | 'giderler'
+VN[NUM=1] -> 'uyudum' | 'öleceğim'|'kırarım' | 'vururum' | 'parçalamışım' | 'gönderdim' | 'salladım'| 'kalacağım'|'giderim'
+VN[NUM=2] -> 'uyudun' | 'ağla' | 'öleceksin' |'kırarsın' | 'vurursun' | 'parçalamışsın' | 'gönderdin' | 'salladın'|'kalacaksın'|'gidersin'
+VN[NUM=3] -> 'uyudu' | 'ağla' | 'ölecek'|'kırar' | 'vurur' | 'parçalamış' | 'gönderdi' | 'salladı'|'kalacak' |'gider'
+VN[NUM=4] -> 'uyuduk' | 'öleceğiz'|'kırarız' | 'vururuz' | 'parçalamışız' | 'gönderdik' | 'salladık'|'kalacağız' |'gideriz'
+VN[NUM=5] -> 'uyudunuz' | 'ağlayın' | 'öleceksiniz'|'kırarsınız' | 'vurursunuz' | 'parçalamışsınız' | 'gönderdiniz' | 'salladınız'|'kalacaksınız'| 'gidersiniz'
+VN[NUM=6] -> 'uyudular' | 'ağlasınlar' | 'ölecekler'|'kırarlar' | 'vururlar' | 'parçalamışlar' | 'gönderdiler' | 'salladılar'|'kalacaklar'| 'giderler'
+# N Analysis
+N[NUM=1] -> 'ben'
+N[NUM=2] -> 'sen'
+N[NUM=3] -> 'o' |'köpek' | 'sincap' | 'kitap' | 'sünger' | 'salkım' | 'fare' | 'peynir'| 'çocuk' | 'kedi'
+N[NUM=4] -> 'biz'
+N[NUM=5] -> 'siz'
+N[NUM=6] -> 'onlar' |'köpekler' | 'sincaplar' | 'kitaplar' | 'süngerler' | 'salkımlar' | 'fareler' | 'peynirler'| 'çocuklar' |'kediler'
+NOB[NUM=?n] -> 'beni' |'seni'|'onu'|'bizi'|'sizi'|'onları'|'köpekleri'|'sincapları'|'kitapları'|'süngerleri'|'salkımları'|'fareleri'|'peynirleri' |'çocukları'| 'kedileri'|'köpeği'|'sincabı'|'kitabı'|'süngeri'|'salkımı'|'fareyi'|'peyniri'|'çocuğu'|'kediyi'
+NDT[NUM=?n] -> 'bana' | 'sana' | 'ona' | 'bize' | 'size' | 'onlara' | 'köpeklere' | 'sincaplara' | 'kitaplara' | 'süngerlere' | 'salkımlara' | 'farelere' | 'peynirlere' | 'çocuklara' | 'kedilere'|'köpeğe'|'sincaba'|'kitaba'|'süngere'|'salkıma'|'fareye'|'peynire'|'çocuğa'|'kediye'
+NNIN[NUM=?n] -> 'onun' | 'onların'| 'köpeklerin' | 'sincapların' | 'kitapların' | 'süngerlerin' | 'salkımların' | 'farelerin' | 'peynirlerin' | 'çocukların' | 'kedilerin'|'köpeğin'|'sincabın'|'kitabın'|'süngerin'|'salkımın'|'farenin'|'peynirin'|'çocuğun'|'kedinin'
+# Det Analysis
+Det[NUM=?n] -> 'şu' | 'bu' | 'o' | 'öteki' | 'bir'
+# NomRel Analysis
+NomRel[NUM=?n] -> 'minderdeki' | 'uçaktaki' | 'şebekedeki' |'masadaki' | 'banyodaki' |'sudaki' |'olaydaki' |'tuzaktaki'| 'uzaktaki' |'kuyudaki'
+Adj[NUM=?n] -> 'büyük'| 'mavi'| 'küçük'| 'siyah'| 'beyaz'| 'ufak'| 'kalın'| 'iyi' |'kötü' |'sarı'
+VerbRelDT[NUM=?n] ->  'vuran'
+VerbRelNIN[NUM=?n]-> 'öldürdüğü' | 'gittiği'| 'ağlattığı' | 'kaldırdığı'
+VerbRelOB[NUM=?n] -> 'sallayan' | 'vuran' | 'kıran' | 'parçalayan' 
+VerbRelX[NUM=?n] -> 'uyuyan' | 'ağlayan'
+
+
+

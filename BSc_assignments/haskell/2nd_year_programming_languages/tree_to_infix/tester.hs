@@ -1,0 +1,1 @@
+treetoinfix (Branch '*' (Branch '-' Empty (Leaf '5')) (Branch '/' (Branch '-' (Branch '-' (Leaf '3') (Leaf '8')) (Leaf '2')) (Leaf '0')))

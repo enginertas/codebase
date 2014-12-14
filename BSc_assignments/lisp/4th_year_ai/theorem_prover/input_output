@@ -1,0 +1,123 @@
+(prove '(
+  ((a (f x)) (l (g x) x)) 
+  ((~ l x (f x)) (l (g x) x)) 
+  ((~ l y x) (~ a z) (~ k x z)) 
+  ((~ a t) (l J t)) 
+  ((k J T) (k C T)) 
+  ((c T)) 
+  ((~ c x) (a x)) 
+  ((a T))
+  ((~ l y x) (k x T))
+  ((~ a (f J)) (l (g J) J))
+  ((l (g J) J))
+)
+
+'(((~ k C T))))
+
+(yes (((k J T) (k C T)) ((~ k C T)) ((k J T))) (((~ l y x) (k x T)) ((~ k C T)) ((~ l y C))) (((a (f x)) (l (g x) x)) ((~ l y C)) ((a (f C))))
+ (((~ l x (f x)) (l (g x) x)) ((~ l y C)) ((~ l C (f C)))) (((~ l y x) (~ a z) (~ k x z)) ((a (f C))) ((~ l y x) (~ k x (f C))))
+ (((~ a t) (l J t)) ((~ l y x) (~ k x (f C))) ((~ a x) (~ k x (f C)))) (((~ c x) (a x)) ((~ a x) (~ k x (f C))) ((~ c x) (~ k x (f C))))
+ (((a T)) ((~ a x) (~ k x (f C))) ((~ k T (f C)))) (((~ a (f J)) (l (g J) J)) ((~ l y x) (~ k x (f C))) ((~ a (f J)) (~ k J (f C))))
+ (((l (g J) J)) ((~ l y x) (~ k x (f C))) ((~ k J (f C)))) (((a (f x)) (l (g x) x)) ((~ a (f J)) (~ k J (f C))) ((l (g J) J) (~ k J (f C))))
+ (((~ l x (f x)) (l (g x) x)) ((~ l y x) (~ k x (f C))) ((~ l x (f x)) (~ k x (f C))))
+ (((~ l y x) (~ a z) (~ k x z)) ((l (g J) J) (~ k J (f C))) ((~ a z) (~ k J z) (~ k J (f C))))
+ (((~ a t) (l J t)) ((~ l x (f x)) (~ k x (f C))) ((~ a (f x)) (~ k J (f C)))) (((k J T) (k C T)) ((~ a z) (~ k J z)) ((k C T) (~ a T)))
+ (((c T)) ((~ c x) (~ k x (f C))) ((~ k T (f C)))) (((~ c x) (a x)) ((k C T) (~ a T)) ((~ c T) (k C T))) (((a T)) ((k C T) (~ a T)) ((k C T)))
+ (((~ l y x) (k x T)) ((~ a z) (~ k J z)) ((~ l y J) (~ a T))) (((~ a (f J)) (l (g J) J)) ((~ l y J) (~ a T)) ((~ a (f J)) (~ a T)))
+ (((l (g J) J)) ((~ l y J) (~ a T)) ((~ a T))) (((a (f x)) (l (g x) x)) ((~ a (f J)) (~ a T)) ((l (g J) J) (~ a T)))
+ (((~ l x (f x)) (l (g x) x)) ((~ l y J) (~ a T)) ((~ l J (f J)) (~ a T))) (((~ l y x) (~ a z) (~ k x z)) ((l (g J) J) (~ a T)) ((~ a z) (~ k J z) (~ a T)))
+ (((~ a t) (l J t)) ((~ l J (f J)) (~ a T)) ((~ a (f J)) (~ a T))) (((k J T) (k C T)) ((~ k J z) (~ a z)) ((k C T) (~ a T)))
+ (((c T)) ((~ c T) (k C T)) ((k C T))) (((~ c x) (a x)) ((~ k J z) (~ a z)) ((~ c z) (~ k J z))) (((a T)) ((~ k J z) (~ a z)) ((~ k J T)))
+ (((~ l y x) (k x T)) ((~ k J T)) ((~ l y J))) (((~ a (f J)) (l (g J) J)) ((~ l y J)) ((~ a (f J)))) (((l (g J) J)) ((~ l y J)) nil))
+
+
+----------------
+
+(prove '(((~ a x) (~ w y) (~ s x y z) (~ h z) (c x)) ((~ m x) (~ o A x) (s B x A)) ((~ e x D) (h x)) ((~ m x) (w x)) ((o A C)) ((a B)) ((m C)) ((e A D)))
+'(((~ c B))) )
+
+(yes (((~ a x) (~ w y) (~ s x y z) (~ h z) (c x)) ((~ c B)) ((~ a B) (~ w y) (~ s B y z) (~ h z)))
+ (((~ m x) (~ o A x) (s B x A)) ((~ a B) (~ w y) (~ s B y z) (~ h z)) ((~ m y) (~ o A y) (~ a B) (~ w y) (~ h A)))
+ (((~ e x D) (h x)) ((~ m y) (~ o A y) (~ a B) (~ w y) (~ h A)) ((~ e A D) (~ m y) (~ o A y) (~ a B) (~ w y)))
+ (((~ m x) (w x)) ((~ e A D) (~ m y) (~ o A y) (~ a B) (~ w y)) ((~ m y) (~ e A D) (~ m y) (~ o A y) (~ a B)))
+ (((o A C)) ((~ e A D) (~ m y) (~ o A y) (~ a B)) ((~ e A D) (~ m C) (~ a B))) (((a B)) ((~ e A D) (~ m C) (~ a B)) ((~ e A D) (~ m C)))
+ (((m C)) ((~ e A D) (~ m C)) ((~ e A D))) (((e A D)) ((~ e A D)) nil))
+
+
+
+-----------------------------------------------------------
+
+(prove '(((a x) (q x)) ((~ q A))) '(((~ a A))))
+(yes (((a x) (q x)) ((~ a A)) ((q A))) (((~ q A)) ((q A)) nil))
+
+---------------
+
+(prove '(((a B))) '(((~ a A))))
+(no)
+
+-----------------
+
+(prove '( ((a x) (q x)) ) '( ((~ a A)) ))
+(NO)
+
+------------------------------------
+
+(prove '( ((a x) (q x)) ) '( ((~ a A)) ((~ q A)) ))
+
+(NO)
+
+----------------
+
+(prove '( ((a x) (q x)) ) '( ((~ a A)) ((~ q A)) ))
+(NO)
+
+-------------
+
+(prove '( ((a x) (q x)) ((~ a A))) '(  ((~ q A)) ))
+(YES (((A X) (Q X)) ((~ Q C0)) ((A C0))) (((~ A C0)) ((A C0)) NIL))
+
+----------------
+
+(prove '( ((a x) (q x)) ) '( ((~ a A) (~ q A)) ))
+(YES (((A X) (Q X)) ((~ A C0) (~ Q C0)) NIL))
+
+-------------------------------------------
+
+(prove '( ((a x) (p (f m b))) ((q z) (~ p (f c d)))  ((~ a A))  ) '(  ((~ q A)) ) )
+(yes (((q z) (~ p (f c d))) ((~ q A)) ((~ p (f c d)))) (((a x) (p (f m b))) ((~ p (f c d))) ((a x))) (((~ a A)) ((a x)) nil))
+
+--------------------
+
+(prove '( ((a x) (p x)) ((q z) (~ p (f c d)))  ((~ a (f z t)))  ) '(  ((~ q A)) ) )
+(YES (((Q Z) (~ P (F C D))) ((~ Q C0)) ((~ P (F C D)))) (((A X) (P X)) ((~ P (F C D))) ((A (F C D)))) (((~ A (F Z T))) ((A (F C D))) NIL))
+
+---------------------
+
+(prove '( ((a x) (p x)) ((q z) (~ p (f A d)))  ((~ a (f B t)))  ) '(  ((~ q A)) ) )
+(NO)
+
+-----------------------------
+
+(prove '( ((a x) (p (f m b))) ((q z) (~ p (f c d))) ((p x)) ((~ a A))  ) '(  ((~ q A)) ))
+(YES (((Q Z) (~ P (F C D))) ((~ Q C0)) ((~ P (F C D)))) (((P X)) ((~ P (F C D))) NIL))
+
+-----------------------------
+
+(prove '( ((a x) (p x)) ((~ a x)) ) '(((~ p A))))
+(YES (((A X) (P X)) ((~ P C0)) ((A C0))) (((~ A X)) ((A C0)) NIL))
+
+------------------------------
+
+(prove '( ((a x) (~ a x) (p x))  ) '(((~ p A))))
+(YES (((P X)) ((~ P C0)) NIL))
+
+----------------------------
+
+(prove '( ((~ a x) (l x y)) ((a x))  ) '(((~ l A a))))
+(yes (((~ a x) (l x y)) ((~ l A a)) ((~ a A))) (((a x)) ((~ a A)) nil))
+
+-----------------------------
+
+(prove '(((p A (f t))) ((q z) (~ p z (f B))) ((~ q y) (r y))) '(((~ r A))))
+(yes (((~ q y) (r y)) ((~ r A)) ((~ q A))) (((q z) (~ p z (f B))) ((~ q A)) ((~ p A (f B)))) (((p A (f t))) ((~ p A (f B))) nil))
+

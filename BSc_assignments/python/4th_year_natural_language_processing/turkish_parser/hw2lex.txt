@@ -1,0 +1,6 @@
+N:		köpek sincap kitap sünger salkım fare peynir çocuk ben kedi
+Det:		şu bir bu o öteki
+NomRel:		minderdeki uçaktaki şebekedeki masadaki banyodaki sudaki olaydaki tuzaktaki uzaktaki kuyudaki
+Adj:		büyük mavi küçük siyah beyaz ufak kalın iyi kötü sarı
+VerbRel:	uyuyan kıran vuran parçalayan ağlayan öldürdüğü gittiği ağlattığı kaldırdığı sallayan
+V:		uyudu kırar vurur parçalamış ağla ölecek kalacak gönderdi salladı gider

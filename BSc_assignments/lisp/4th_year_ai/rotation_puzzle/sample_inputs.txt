@@ -1,0 +1,54 @@
+'((3 2 8 14) (6 4 10 7) (1 9 13 16) (5 15 11 12))
+(move-right rotate-right move-down rotate-left move-left rotate-right move-up rotate-right move-right move-down rotate-left move-up rotate-right)
+
+'((1 2 3 4) (5 10 7 13) (9 16 6 8) (15 14 12 11))
+(move-down move-right rotate-left move-left rotate-left move-right rotate-left rotate-left move-left rotate-right move-right rotate-right)
+
+'((1 8 12 10) (3 4 11 16) (5 6 7 15) (9 2 13 14))
+(move-right rotate-right move-down rotate-right move-left rotate-right move-right move-up rotate-right rotate-right)
+
+'((12 6 5 10) (1 8 3 9) (13 14 4 2) (15 11 7 16))
+(rotate-right move-right rotate-right rotate-right rotate-right rotate-right move-left move-down rotate-left rotate-left)
+
+'((13 9 6 8) (7 10 2 12) (1 5 4 11) (14 15 3 16))
+(rotate-left rotate-left move-down rotate-left rotate-left move-up move-right rotate-right move-left rotate-left move-down rotate-right)
+
+'((2 7 1 4) (13 9 3 8) (14 15 6 12) (5 10 11 16))
+(rotate-right move-down rotate-left rotate-left move-up rotate-left rotate-left move-down rotate-left move-up rotate-right rotate-right rotate-right)
+
+'((6 9 3 11) (2 5 12 7) (1 10 8 4) (13 14 15 16))
+(move-right rotate-left move-left rotate-right move-right rotate-left move-left rotate-right)
+
+'((2 14 9 3) (1 4 12 16) (5 7 11 15) (13 6 10 8))
+(move-right move-down rotate-right rotate-right rotate-right move-up rotate-left rotate-left move-down rotate-left move-left move-up rotate-right)
+
+'((1 2 3 4 5 6 7 8) (9 10 11 12 13 14 15 16) (17 18 19 20 21 22 23 24) (25 26 27 30 38 46 31 32) (33 34 35 29 37 45 39 40) (41 42 43 28 36 44 47 48) (49 50 51 52 53 54 55 56) (57 58 59 60 61 62 63 64))
+(move-right move-right move-right move-down move-down move-down rotate-right rotate-right)
+
+'((1 2 3 4 5 14 6 7) (9 10 11 12 13 22 15 8) (17 18 19 20 21 23 24 16) (25 26 27 28 30 31 39 32) (33 34 35 36 29 38 47 40) (41 42 43 44 37 45 46 48) (49 50 51 52 53 54 55 56) (57 58 59 60 61 62 
+63 64))
+(move-right move-right move-right move-right move-right rotate-left move-left move-down move-down move-down rotate-right)
+
+'((1 2 3 4 5 6 7 8) (9 10 11 12 13 14 15 16) (17 18 19 20 21 22 23 24) (25 26 27 28 29 30 31 32) (35 58 57 36 37 38 39 40) (34 59 50 44 45 46 47 48) (33 51 43 52 53 54 55 56) (42 41 49 60 61 62 63 64))
+(move-down move-down move-down move-down rotate-right rotate-right move-down rotate-right rotate-right rotate-right)
+
+'((2 3 18 4 5 6 7 8) (1 26 19 10 13 14 15 16) (9 17 27 11 21 22 23 24) (25 28 20 12 29 30 31 32) (33 34 35 36 37 38 39 40) (41 42 43 44 45 46 47 48) (49 50 51 52 53 54 55 56) (57 58 59 60 61 62 
+63 64))
+(rotate-right move-right move-down rotate-left rotate-left)
+
+'((2 3 18 4 5 6 7 8) (1 26 19 10 13 14 15 16) (9 17 27 11 21 22 23 24) (25 28 20 12 29 30 31 32) (33 34 35 36 37 38 39 40) (41 42 43 44 45 46 47 48) (49 50 51 52 53 54 55 56) (57 58 59 60 61 62 63 64))
+(rotate-right move-right move-down rotate-left rotate-left)
+
+'((1 2 3 4 5 6 7 8) (9 10 11 12 13 14 15 16) (17 18 19 20 21 22 23 24) (25 26 27 28 29 30 31 32) (33 34 35 44 36 37 39 40) (41 42 43 52 45 38 47 48) (49 50 51 53 54 46 55 56) (57 58 59 60 61 62 
+63 64))
+(move-right move-right move-right move-down move-down move-down move-down rotate-left)
+
+'((1 2 3 4 5 6 7 8) (9 10 11 12 13 14 15 16) (17 18 19 20 29 30 21 22) (25 26 27 28 37 39 23 24) (33 34 35 36 38 31 40 32) (41 42 43 44 45 46 47 48) (49 50 51 52 53 54 55 56) (57 58 59 60 61 62 63 64))
+(move-right move-right move-right move-right move-down move-down move-right rotate-left move-left rotate-left)
+
+'((3 19 35 4 5 6 7 8) (2 11 18 12 13 14 15 16) (1 10 9 20 21 22 23 24) (17 26 27 28 29 30 31 32) (25 34 43 36 37 38 39 40) (33 41 42 44 45 46 47 48) (49 50 51 52 53 54 55 56) (57 58 59 60 61 62 
+63 64))
+(rotate-right rotate-right move-down rotate-right move-down move-down rotate-right)
+
+'((1 2 3 4 5 6 7 8) (9 10 11 12 13 14 15 16) (17 18 19 20 21 22 23 24) (25 26 27 28 30 39 48 31) (33 34 35 36 38 46 47 32) (41 42 43 44 29 37 45 40) (49 50 51 52 53 54 55 56) (57 58 59 60 61 62 63 64))
+(move-right move-right move-right move-right move-down move-left move-left rotate-right rotate-right move-right rotate-left)
