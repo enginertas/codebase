@@ -15,6 +15,15 @@ def parse_html(url):
 	return BeautifulSoup(response.text, 'html.parser')
 
 def parse_html_multi_pages(url, page_count):
+	'''
+	This function parses all Amazon HTMLs until the end page (calculated by page_count)
+
+	url: string -> Base product search url with pagination.
+		Example: 'https://www.amazon.co.uk/s?i=aps&k=mr16 12v 35w&ref=nb_sb_noss'
+	page_count: int -> The page count in the paginated URL.
+
+	Returns list[BeautifulSoup()] -> A list of parsed HTMLs
+	'''
 	return [parse_html(url + '&page={}'.format(page_i)) for page_i in range(page_count)]
 
 def parse_price_span(price):
@@ -58,6 +67,16 @@ def crawl_results_html(https_prefix, parsed_html):
 	return result_list
 
 def crawl_results_html_array(https_prefix, parsed_html_array):
+	'''
+	This function returns a product array (with links and prices) by extracting the info in the
+	parsed HTMLs
+
+	https_prefix: string -> The prefix to add into head of all service URLs.
+		Example: 'https://amazon.co.uk'
+	parsed_html_array: list[BeautifulSoup()] -> A list of parsed HTMLs
+
+	Returns list[price, base_price, text, link]
+	'''
 	result_list = []
 	for parsed_html in parsed_html_array:
 		result_list.extend(crawl_results_html(https_prefix, parsed_html))
