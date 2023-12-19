@@ -8,7 +8,7 @@ import sys
 def get_header():
 	return {
 			'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-			'accept-encoding': 'gzip, deflate, br',
+			'accept-encoding': 'gzip, deflate',
 			'accept-language': 'en-US,en;q=0.9,tr;q=0.8',
 			'cache-control': 'max-age=0',
 			#'upgrade-insecure-requests': '1',
